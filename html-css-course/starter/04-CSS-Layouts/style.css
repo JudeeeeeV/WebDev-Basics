@@ -26,7 +26,6 @@ body {
   padding-left: 40px;
   padding-right: 40px; */
     padding: 20px 40px;
-    margin-bottom: 60px;
     /* height: 80px; */
 }
 
@@ -51,7 +50,6 @@ aside {
     /* padding-top: 50px;
   padding-bottom: 50px; */
     padding: 50px 40px;
-    width: 500px;
 }
 
 /* SMALLER ELEMENTS */
@@ -76,6 +74,9 @@ h3 {
     font-size: 30px;
     margin-bottom: 20px;
     margin-top: 40px;
+}
+
+h3::after {
 }
 
 h4 {
@@ -198,7 +199,6 @@ nav a:link {
   display: block; */
 
     margin-right: 30px;
-    margin-top: 10px;
     display: inline-block;
 }
 
@@ -268,14 +268,15 @@ nav p {
 } */
 
 /* FLOATS */
-
+/* 
 .author-img {
     float: left;
     margin-bottom: 20px;
 }
 
 .author {
-    float: left;
+    float: lef
+    t;
     margin-top: 10px;
     margin-left: 20px;
 }
@@ -290,7 +291,7 @@ nav {
 
 /* .clear {
     clear: both;
-} */
+} 
 
 .clearfix::after {
     content: "";
@@ -311,4 +312,108 @@ aside {
 footer {
     background-color: yellow;
     clear: both;
+} */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 15px;
+}
+
+.author {
+    margin-bottom: 0;
+}
+
+.related-post {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.related-author {
+    margin: 0;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.related-link:link {
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+article {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+aside {
+    flex: 0 0 300px;
+}
+
+/* GRID */
+/* .container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+
+    gap: 4rem;
+    align-items: start;
+    
+}
+
+.main-header {
+    grid-column: 1 / -1;
+}
+
+article {
+}
+
+aside {
+}
+
+footer {
+    grid-column: 1 / -1;
+} */
+
+.container {
+    display: grid;
+
+    grid-template-columns: 1fr 300px;
+
+    gap: 5rem;
+    grid-template-areas:
+        "header header"
+        "article aside"
+        "footer footer";
+}
+
+.main-header {
+    grid-area: header;
+}
+
+article {
+    grid-area: article;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
 }
